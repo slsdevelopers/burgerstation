@@ -211,7 +211,10 @@ var/global/list/all_clients = list() //Assoc list
 /client/proc/get_ranks()
 
 	var/list/rank/ranks = list(SSadmin.stored_ranks["user"])
-	if(world.port == 0) ranks |= SSadmin.stored_ranks["host"]
+	//if(world.port == 0) ranks |= SSadmin.stored_ranks["host"] //if user is the local host add them as admin (dream seeker)
+	//if(src.key == world.host) ranks |= SSadmin.stored_ranks["host"] //if this user is the same host on dream daemon
+	if(src.isadmin()) ranks |= SSadmin.stored_ranks["host"] //see isadmin()
+	if(src.ishost()) ranks |= SSadmin.stored_ranks["host"]
 	if(SSadmin.stored_user_ranks[ckey])
 		for(var/k in SSadmin.stored_user_ranks[ckey])
 			var/rank/R = k
@@ -232,7 +235,7 @@ var/global/list/all_clients = list() //Assoc list
 	return TRUE
 
 /client/proc/welcome()
-	to_chat("<title>Welcome to Burgerstation 13</title><p>This is a work in progress server for testing out currently working features and other memes. Absolutely anything and everything will end up being changed. If you wish to join the discord, please do so here: https://discord.gg/yEaV92a</p>")
+	to_chat(motd_message)
 	return TRUE
 
 /*

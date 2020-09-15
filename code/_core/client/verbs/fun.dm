@@ -1,6 +1,6 @@
 /client/verb/make_announcement()
 
-	set category = "Fun"
+	set category = "Admin"
 	set name = "Make Announcement"
 
 	var/sender = input("Who should the sender be?","Message Sender") as text | null

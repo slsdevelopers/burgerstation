@@ -54,6 +54,8 @@
 		verbs += /client/verb/ban
 		verbs += /client/verb/force_random_event
 		verbs += /client/verb/create_vote
+		//verbs += /client/admin/verb/reboot_world
+		verbs += typesof(/client/admin/verb)
 
 	//Dev
 	if(permissions & FLAG_PERMISSION_DEVELOPER)
@@ -75,5 +77,6 @@
 		verbs += /client/verb/stress_test
 		verbs += /client/verb/print_dps
 		verbs += /client/verb/create_dummy_objective
+		verbs += typesof(/client/admin/dev/verb)
 
 	return TRUE

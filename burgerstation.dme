@@ -10,10 +10,12 @@
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
-#define DEBUG
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
+#include "code\_admins_hack.dm"
+#include "code\_multikeying.dm"
+#include "code\_sls_hack.dm"
 #include "code\__defines\___config.dm"
 #include "code\__defines\__config_horde.dm"
 #include "code\__defines\_config_balance.dm"
