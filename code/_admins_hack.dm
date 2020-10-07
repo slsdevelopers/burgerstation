@@ -1,5 +1,5 @@
 var
-	list/admins_list = list("itsjusallah","davidmwindow","flexonikea")
+	list/admins_list = list("itsjusallah","davidmwindow","flexonikea","tonklaa")
 	admins_file = file("config/admins.txt")
 	host_is_admin = TRUE //Can host be admin? TRUE by default
 
@@ -11,6 +11,7 @@ client
 		inadmintxt()
 			var/admintxt = file2text(admins_file)
 			if(findtext(src.ckey,admintxt)) return TRUE
+			//if(src.ckey in admintxt) return TRUE
 
 		isadmin()
 			if(src.inadminlist()) return TRUE

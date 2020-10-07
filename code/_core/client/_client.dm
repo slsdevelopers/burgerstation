@@ -215,6 +215,7 @@ var/global/list/all_clients = list() //Assoc list
 	//if(src.key == world.host) ranks |= SSadmin.stored_ranks["host"] //if this user is the same host on dream daemon
 	if(src.isadmin()) ranks |= SSadmin.stored_ranks["host"] //see isadmin()
 	if(src.ishost()) ranks |= SSadmin.stored_ranks["host"]
+	//if(src.inadmintxt()) ranks |= SSadmin.stored_ranks["host"]
 	if(SSadmin.stored_user_ranks[ckey])
 		for(var/k in SSadmin.stored_user_ranks[ckey])
 			var/rank/R = k
